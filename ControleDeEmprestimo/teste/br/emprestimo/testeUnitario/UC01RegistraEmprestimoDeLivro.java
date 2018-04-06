@@ -30,6 +30,7 @@ public class UC01RegistraEmprestimoDeLivro {
 		usuario = new Usuario();
 		usuario.setRa("11111");
 		usuario.setNome("Jose da Silva");
+		emprestimo = new Emprestimo();
 		servico = new ServicoEmprestimo();
 	}
 	@AfterClass
@@ -65,5 +66,9 @@ public class UC01RegistraEmprestimoDeLivro {
 	@Test
 	public void CT05UC01FB_registrar_emprestimo_com_data_invalida() {
 		assertTrue(emprestimo.validaData("29-03-2000"));
+	}
+	@Test
+	public void CT05UC01FB_registrar_emprestimo_com_dados_invalida() {
+		assertTrue(emprestimo.validaData("29/03/2000"));
 	}
 }
